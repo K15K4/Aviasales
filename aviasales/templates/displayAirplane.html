@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Самолет</title>
+</head>
+<body class="container">
+    <a href='/'> Вернуться </a>
+    {% if airplane.count > 0 %}
+    <h2>Список статусов</h2>
+    <table>
+        <tr>
+            <th>Номер</th>
+            <th>Название</th>
+        </tr>
+        {% for el in airplane %}
+        <tr>
+            <td>{{ el.id }}</td>
+            <td>{{ el.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <a href='createAirplane/'> Для добавления самолета щелкни здесь! </a>
+</body>
+</html>

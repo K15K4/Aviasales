@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пассажир</title>
+</head>
+<body class="container">
+    <a href='/'> Вернуться </a>
+    {% if person.count > 0 %}
+    <h2>Список Пассажиров</h2>
+    <table>
+        {% for el in person %}
+        <tr>
+            <td>
+                <p>
+                    <label>Имя:</label>
+                    {{ el.name }}
+                </p>
+                <p>
+                    <label>Фамилия:</label>
+                    {{ el.surname }}
+                </p>
+            </td>
+            <td>
+                <p>
+                    <img src="{{ el.photo.url }}"  style="max-height:300px">
+                </p>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <a href='createPerson/'> Для добавления Пассажира щелкни здесь! </a>
+</body>
+</html>

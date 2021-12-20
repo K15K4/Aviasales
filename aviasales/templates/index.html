@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="/displayAirplane/">Самолеты</a>
+    <a href="/displayCountry/">Страны</a>
+    <a href="/displayPerson/">Пассажиры</a>
+    <a href="/createTicket/">Создать билет</a>
+{% if ticket.count > 0 %}
+    <table>
+        {% for el in ticket %}
+        <tr>
+            <td>
+                <p>
+                    <label>Название:</label>
+                    {{ el.name }}
+                </p>
+                <p>
+                    <label>Вылет:</label>
+                    {{ el.countryStart }}
+                </p>
+                <p>
+                    <label>Прилет:</label>
+                    {{ el.countryEnd }}
+                </p>
+                <p>
+                    <label>Самолет:</label>
+                    {{ el.airplane }}
+                </p>
+                <p>
+                    <label>Пассажир:</label>
+                    {{ el.person }}
+                </p>
+                <p>
+                    <a href="{{ el.description.url }}" type="txt">Описание билета</a>
+                </p>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
